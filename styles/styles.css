@@ -1,0 +1,154 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+.header {
+    background-color: darkgreen;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+h2,
+h3 {
+    margin: .5rem;
+}
+
+h4 {
+    margin: .1rem;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: rgb(194, 190, 170);
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
+}
+
+.contenido-salones {
+    background-color: aliceblue;
+    color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.salon {
+    background-color: darkgreen;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    flex: 0 1 calc(33% - 1rem);
+    text-align: center;
+}
+
+.logo {
+    height: 6rem;
+    width: 14rem;
+    margin: 0;
+}
+
+.grow:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.salon:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .salon {
+        flex: 0 1 calc(50% - 1rem);
+    }
+}
+
+
+/*modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.452);
+}
+
+.contenido-modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    width: 70%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+    animation-name: modal;
+    animation-duration: 1s;
+}
+
+@keyframes modal {
+    from {
+        top: -330px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #f2f2f2;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #7f8c8d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 8px 16px;
+    background: darkgreen;
+    color: #f2f2f2;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+th,
+td {
+    border: .1rem solid black;
+    padding: 0 2rem;
+}
+
+td {
+    font-size: .8rem;
+}
