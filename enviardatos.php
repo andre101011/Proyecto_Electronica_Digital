@@ -1,20 +1,30 @@
 <?php
+include 'core/db.php';
 
-$conexion = new mysqli("localhost", "root","12345","salones");
+$db = DB::getInstance();
+$mysqli = $db->getConnection(); 
 
 $chipid = $_POST ['chipid'];	
 $puerta = $_POST ['puerta'];
 $videoBeam = $_POST ['videoBeam'];
 $sensorMovimiento = $_POST ['sensorMovimiento'];
-$query="UPDATE `valores` SET `puerta` = '$puerta', `videoBeam` = '$videoBeam', `sensorMovimiento` = $sensorMovimiento WHERE `valores`.`chipId` = '$chipid';";
-$resultado= $conexion->query($query);
 
-if($resultado){
+$query="
+  UPDATE
+    `valores` 
+  SET
+    `puerta` = '$puerta', 
+    `videoBeam` = '$videoBeam',
+    `sensorMovimiento` = $sensorMovimiento 
+  WHERE
+    `valores`.`chipId` = '$chipid';
+";
 
-              echo "Registro exitoso";
-              }
-else{
-             echo "Registro no exitoso";
-    }
+$result = $mysqli->query($query);
 
+if($result) {
+  echo "Registro exitoso";
+} else {
+  echo "Registro no exitoso";
+}
 ?>

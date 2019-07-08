@@ -1,4 +1,6 @@
-Proyecto_Electronica_Digital
+# Proyecto Electronica Digital
 
-Los archivos que están en este repositorio corresponden a los que se deben colocar en la carpeta htdocs.
-Usando XAMPP
+Usar cualquier servidor configurado con PHP como;
+
+* Nginx: entornos de producción
+* XAMPP: entorno de desarrollo
